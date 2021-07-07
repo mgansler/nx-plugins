@@ -1,0 +1,26 @@
+# Documentation: https://docs.github.com/en/github/administering-a-repository/enabling-and-disabling-version-updates
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    open-pull-requests-limit: 20
+    ignore:
+      # @nrwl/* dependencies will be updated via the @nrwl/workspace package.
+      - dependency-name: '@nrwl/cli'
+      - dependency-name: '@nrwl/cypress'
+      - dependency-name: '@nrwl/devkit'
+      - dependency-name: '@nrwl/eslint-plugin-nx'
+      - dependency-name: '@nrwl/jest'
+      - dependency-name: '@nrwl/linter'
+      - dependency-name: '@nrwl/nest'
+      - dependency-name: '@nrwl/node'
+      - dependency-name: '@nrwl/react'
+      - dependency-name: '@nrwl/storybook'
+      - dependency-name: '@nrwl/tao'
+      - dependency-name: '@nrwl/web'
+    schedule:
+      interval: 'daily'
