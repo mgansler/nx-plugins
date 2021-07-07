@@ -29,7 +29,8 @@
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
     "help": "nx help",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "husky install"
   },
   "dependencies": {
     "tslib": "^2.0.0"
@@ -40,6 +41,7 @@
     "@nrwl/workspace": "12.5.7",
     "@types/node": "14.14.33",
     "dotenv": "8.2.0",
+    "husky": "^7.0.1",
     "prettier": "^2.3.1",
     "semantic-release": "^17.4.4",
     "ts-node": "~9.1.1",
