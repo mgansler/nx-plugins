@@ -26,5 +26,13 @@
       }
     ]
   },
-  "projects": {}
+  "projects": {
+    "cypress-ct": {
+      "tags": []
+    },
+    "cypress-ct-e2e": {
+      "tags": [],
+      "implicitDependencies": ["cypress-ct"]
+    }
+  }
 }

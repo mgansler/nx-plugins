@@ -1,6 +1,77 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "cypress-ct": {
+      "root": "libs/cypress-ct",
+      "sourceRoot": "libs/cypress-ct/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/cypress-ct/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/cypress-ct"],
+          "options": {
+            "jestConfig": "libs/cypress-ct/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/cypress-ct",
+            "tsConfig": "libs/cypress-ct/tsconfig.lib.json",
+            "packageJson": "libs/cypress-ct/package.json",
+            "main": "libs/cypress-ct/src/index.ts",
+            "assets": [
+              "libs/cypress-ct/*.md",
+              {
+                "input": "./libs/cypress-ct/src",
+                "glob": "**/!(*.ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/cypress-ct/src",
+                "glob": "**/*.d.ts",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/cypress-ct",
+                "glob": "generators.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/cypress-ct",
+                "glob": "executors.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "cypress-ct-e2e": {
+      "root": "apps/cypress-ct-e2e",
+      "projectType": "application",
+      "sourceRoot": "apps/cypress-ct-e2e/src",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/nx-plugin:e2e",
+          "options": {
+            "target": "cypress-ct:build",
+            "npmPackageName": "@nx-plugins/cypress-ct",
+            "pluginOutputPath": "dist/libs/cypress-ct",
+            "jestConfig": "apps/cypress-ct-e2e/jest.config.js"
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
   }
