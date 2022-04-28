@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/config-conventional": "^16.2.4",
     "@nrwl/cli": "12.5.7",
     "@nrwl/tao": "12.5.7",
     "@nrwl/workspace": "12.5.7",
