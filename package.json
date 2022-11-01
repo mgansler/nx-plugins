@@ -33,7 +33,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
