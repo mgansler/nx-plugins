@@ -36,7 +36,7 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
+    "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^12.1.4",
     "@nrwl/cli": "12.5.7",
     "@nrwl/tao": "12.5.7",
